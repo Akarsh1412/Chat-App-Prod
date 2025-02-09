@@ -1,0 +1,187 @@
+/* Sidebar Container */
+.chat-sidebar {
+  width: 17rem;
+  height: 90vh;
+  background: linear-gradient(135deg, #5f7adb, #44bba4);
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  border-radius: 16px;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Search Bar */
+.chat-sidebar-search {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  padding: 8px;
+}
+
+.chat-search-input {
+  flex-grow: 1;
+  padding: 6px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  background: transparent;
+  color: black;
+  outline: none;
+}
+
+.chat-search-input::placeholder {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.chat-search-btn {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: 18px;
+  color: white;
+  transition: all 0.3s ease-in-out;
+}
+
+.chat-search-btn:hover {
+  color: #000;
+}
+
+/* Scrollable User List */
+.chat-sidebar-users {
+  flex-grow: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  margin-top: 10px;
+  padding-right: 5px;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.4) rgba(255, 255, 255, 0.1);
+}
+
+.chat-sidebar-users::-webkit-scrollbar {
+  width: 6px;
+}
+
+.chat-sidebar-users::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.4);
+  border-radius: 8px;
+}
+
+.chat-sidebar-users::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Logged-in User Info */
+.chat-loggedin-user {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.2);
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  padding: 12px;
+  margin-top: 10px;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  transition: all 0.3s ease-in-out;
+}
+
+.chat-user-icon {
+  width: 40px; /* Set a fixed width */
+  height: 40px; /* Set a fixed height */
+  border-radius: 50%; /* Make it circular */
+  object-fit: cover; /* Ensure the image scales correctly */
+  margin-right: 8px;
+}
+
+.chat-user-name {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Logout Button */
+.chat-logout-btn {
+  width: 100%;
+  padding: 12px;
+  background: #ff4757;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.chat-logout-icon {
+  font-size: 18px;
+}
+
+.chat-logout-btn:hover {
+  background: #e84118;
+  transform: scale(1.05);
+}
+
+/* Menu Button for Mobile */
+.chat-menu-btn {
+  position: fixed;
+  top: 20px; /* Moved down slightly to prevent overlap */
+  left: 15px;
+  background: #44bba4;
+  color: white;
+  border: none;
+  padding: 10px 12px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 20px;
+  z-index: 1100;
+  display: none; /* Hidden by default */
+}
+
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+  .chat-menu-btn {
+    display: block; /* Show menu button */
+  }
+
+  .chat-sidebar {
+    position: fixed;
+    top: 0;
+    left: -100%; /* Hide sidebar on mobile */
+    width: 260px;
+    height: 100vh;
+    z-index: 1000;
+    padding-top: 60px; /* Extra padding to prevent overlap */
+  }
+
+  .chat-sidebar.open {
+    left: 0; /* Show sidebar when toggled */
+  }
+
+  .chat-sidebar-search {
+    position: relative;
+    margin-top: 15px; /* Increased margin to prevent overlap */
+    padding: 10px;
+    display: flex;
+    align-items: center;
+  }
+
+  .chat-search-input {
+    padding-left: 12px;
+    font-size: 14px;
+    flex: 1;
+  }
+
+  .chat-search-btn {
+    font-size: 16px;
+  }
+}

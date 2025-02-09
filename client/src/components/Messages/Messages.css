@@ -1,0 +1,24 @@
+.messages-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* Increased gap for better readability */
+  padding: 15px;
+  overflow-y: auto;
+  max-height: auto;
+  scrollbar-width: thin; /* For Firefox */
+  scrollbar-color: rgba(255, 255, 255, 0.3) transparent;
+}
+
+/* Custom scrollbar for Webkit browsers (Chrome, Safari) */
+.messages-container::-webkit-scrollbar {
+  width: 6px;
+}
+
+.messages-container::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+}
+
+.messages-container::-webkit-scrollbar-track {
+  background: transparent;
+}
