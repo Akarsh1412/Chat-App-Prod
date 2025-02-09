@@ -27,7 +27,7 @@ const Sidebar = () => {
 
   const handleLogout = async () => {
     try {
-      await axios.get("http://localhost:8080/api/v1/user/logout");
+      await axios.get("https://chat-app-uebz.onrender.com/api/v1/user/logout");
       dispatch(setAuthUser(null));
       dispatch(setSelectedUser(null));
       toast.success("Logout Successful!");
